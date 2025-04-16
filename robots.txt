@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://pnizicnikolac.github.io/al-folio/sitemap.xml
+Sitemap: https://pnizicnikolac.github.io/sitemap.xml
