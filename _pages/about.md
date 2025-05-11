@@ -2,8 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
-
+subtitle: <a href='#'>ETH Zurich</a>, Department of Mathematics (D-MATH), Institute For Operations Research (IFOR)
 profile:
   align: right
   image: prof_pic.jpg
