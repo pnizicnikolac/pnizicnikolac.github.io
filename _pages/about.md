@@ -4,13 +4,12 @@ title: about
 permalink: /
 subtitle: <a href="https://math.ethz.ch/">ETH Zurich, Department of Mathematics, Institute for Operations Research</a>
 profile:
-  align: left
-  image: prof_pic.jpg
+  align: right
+  image: photo_05_2025.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>HG G 21.1, Rämistrasse 101</p>>
     <p>8006 Zurich, Switzerland</p>
-    <p>firstname.lastname@math.ethz.ch</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
@@ -32,7 +31,7 @@ To find out more about the topics my group is interested in, you can visit <a hr
 
 Here is a [link](../assets/pdf/cvpnn.pdf) to my CV.
 
-You can contact me at petar.nizic-nikolac [at] ifor  math [dot] ethz [dot] ch
+You can contact me at petar.nizic-nikolac [at] ifor [dot] math [dot] ethz [dot] ch
 
 <!--
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
