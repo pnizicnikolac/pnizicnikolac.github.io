@@ -8,7 +8,7 @@ profile:
   image: photo_05_2025.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>HG G 21.1, Rämistrasse 101</p>>
+    <p>HG G 21.1, Rämistrasse 101</p>
     <p>8006 Zurich, Switzerland</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
