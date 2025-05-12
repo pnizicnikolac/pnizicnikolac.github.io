@@ -26,7 +26,8 @@ latest_posts:
 ---
 
 I am a PhD student at ETH Zurich and my advisor is <a href="https://people.math.ethz.ch/~abandeira/">Prof. Afonso Bandeira</a>.
-My reserach interests include: High-dimensional Probability, Random Matrix Theory, Theoretical Computer Science, Statistics, and related topics.
+
+My research interests include: High-dimensional Probability, Random Matrix Theory, Theoretical Computer Science, Statistics, and related topics.
 To find out more about the topics my group is interested in, you can visit <a href="https://randomstrasse101.math.ethz.ch/">our group blog</a>.
 
 Here is a [link](../assets/pdf/cvpnn_2025_05.pdf) to my CV.
