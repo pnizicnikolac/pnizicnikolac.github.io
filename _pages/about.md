@@ -30,7 +30,7 @@ I am a PhD student at ETH Zurich and my advisor is <a href="https://people.math.
 My research interests include: High-dimensional Probability, Random Matrix Theory, Theoretical Computer Science, Statistics, and related topics.
 To find out more about the topics my group is interested in, you can visit <a href="https://randomstrasse101.math.ethz.ch/">our group blog</a>.
 
-Here is a [link](../assets/pdf/cvpnn_2026_07.pdf) to my CV.
+Here is a [link](../assets/pdf/cvpnn_2026_07a.pdf) to my CV.
 
 You can contact me at petar.nizic-nikolac [at] ifor [dot] math [dot] ethz [dot] ch
 
