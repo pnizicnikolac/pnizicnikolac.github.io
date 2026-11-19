@@ -117,6 +117,11 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+
+          <!-- CV: links straight to the PDF (no CV page) -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/assets/pdf/cvpnn_actual.pdf' | relative_url }}">CV</a>
+          </li>
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">

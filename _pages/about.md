@@ -5,7 +5,8 @@ permalink: /
 subtitle: <a href="https://math.ethz.ch/">ETH Zurich, Department of Mathematics, Institute for Operations Research</a>
 profile:
   align: right
-  image: photo_05_2025.png
+  image: photo_05_2025.png # shown for "Summer" (the default)
+  image_winter: photo_01_2026.jpg # shown for "Winter"; remove this line to drop the Summer | Winter switch
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>HG G 21.1, Rämistrasse 101</p>
@@ -15,9 +16,10 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 
 announcements:
-  enabled: false # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: true # includes a list of news items (from _data/news.yml), right below the text
+  scrollable: true # shows the news in a small box that scrolls if there are more than 3 items
+  limit: # leave blank to include all the news
+  sidebar: true # true: news in the right column below the photo, papers to its left; false: news below the text, full width
 
 latest_posts:
   enabled: false
@@ -25,14 +27,23 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a PhD student at ETH Zurich and my advisor is <a href="https://people.math.ethz.ch/~abandeira/">Prof. Afonso Bandeira</a>.
+I am a PhD student at ETH Zurich, where I am fortunate to be advised by <a href="https://people.math.ethz.ch/~abandeira/">Prof. Afonso Bandeira</a>.
+Currently I am visiting the Simons Institute in Berkeley.
 
-My research interests include: High-dimensional Probability, Random Matrix Theory, Theoretical Computer Science, Statistics, and related topics.
-To find out more about the topics my group is interested in, you can visit <a href="https://randomstrasse101.math.ethz.ch/">our group blog</a>.
+My research is motivated by three fundamental questions about _randomness_:
 
-Here is my [CV](../assets/pdf/cvpnn_actual.pdf).
+- How can complex phenomena be modelled by random objects?
+- How do procedures and algorithms perform on typical, or random, inputs?
+- How can randomness be leveraged to improve the performance of algorithms?
 
-You can contact me at petar.nizic-nikolac [at] ifor [dot] math [dot] ethz [dot] ch
+Such questions often arise in statistics, computer science, optimization, data science, and numerical linear algebra, and are often answered by random matrix theory, which has been the common thread of my research so far.
+
+**On the academic job market in 2026-27.**
+
+Here is my [CV](../assets/pdf/cvpnn_actual.pdf), you can contact me at pnizic [at] ethz [dot] ch
+
+Feel free to visit
+<a href="https://randomstrasse101.math.ethz.ch/">our group blog</a>.
 
 <!--
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.

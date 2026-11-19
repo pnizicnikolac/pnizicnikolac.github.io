@@ -15,8 +15,53 @@ layout: default
   </header>
 
   <article>
+    {% comment %}
+      announcements.sidebar: two columns in two rows, so that the "research" and "news" headings
+      line up. Row 1: text (left) and photo with address (right). Row 2: paper list (left) and
+      news (right). On phones everything stacks and the news appears in its usual place after
+      the text.
+    {% endcomment %}
+    {% assign news_in_sidebar = false %}
+    {% if page.profile and page.announcements and page.announcements.enabled and page.announcements.sidebar %}
+      {% assign news_in_sidebar = true %}
+    {% endif %}
+
+    {% if news_in_sidebar %}
+      <style>
+        /* Two-column front page: each paper uses the full width of the left-hand column
+           (the theme's empty thumbnail column is dropped). */
+        @media (min-width: 576px) {
+          /* column widths: change both numbers together (they add up to 100%);
+             a wider right-hand column means a bigger photo */
+          .about-main {
+            flex: 0 0 63%;
+            max-width: 63%;
+          }
+          .about-side {
+            flex: 0 0 37%;
+            max-width: 37%;
+          }
+          .about-main .publications ol.bibliography li .row > .abbr {
+            display: none;
+          }
+          .about-main .publications ol.bibliography li .row > [class*='col-sm-'] {
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+        }
+      </style>
+      <div class="row">
+        <div class="col-12 about-side order-sm-2">
+    {% endif %}
+
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      <div
+        {% if news_in_sidebar %}
+          class="profile" style="width: 100%"
+        {% else %}
+          class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}"
+        {% endif %}
+      >
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
@@ -27,10 +72,75 @@ layout: default
           {% endif %}
           {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
       30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
+          {% if page.profile.image_winter %}
+            {% comment %}
+              Summer | Winter switch above the photo: profile.image is shown for Summer (the default),
+              profile.image_winter for Winter. Both are shown in the same frame, so nothing below moves.
+            {% endcomment %}
+            {% assign winter_image_path = page.profile.image_winter | prepend: 'assets/img/' %}
+            <style>
+              .season-toggle {
+                font-size: 0.85rem;
+                text-align: right;
+                margin-bottom: 0.25rem;
+              }
+              .season-toggle button {
+                background: none;
+                border: 0;
+                padding: 0;
+                font: inherit;
+                color: inherit;
+                cursor: pointer;
+              }
+              .season-toggle button.active {
+                font-weight: bold;
+              }
+              /* frame: the shape of the summer photo; the winter photo is cropped (from the top) to fit it */
+              .season-photo img {
+                aspect-ratio: 1404 / 1717;
+                object-fit: cover;
+              }
+              .season-photo[data-season='winter'] img {
+                object-position: center bottom;
+              }
+            </style>
+            <div class="season-toggle">
+              <button type="button" data-season="summer" class="active" aria-pressed="true">Summer</button>
+              |
+              <button type="button" data-season="winter" aria-pressed="false">Winter</button>
+            </div>
+            <div class="season-photo" data-season="summer">
+              {%
+                include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+                cache_bust=true
+              %}
+            </div>
+            <div class="season-photo" data-season="winter" hidden>
+              {%
+                include figure.liquid loading="eager" path=winter_image_path class=profile_image_class sizes=sizes alt=page.profile.image_winter
+                cache_bust=true
+              %}
+            </div>
+            <script>
+              document.querySelectorAll('.season-toggle button').forEach(function (button) {
+                button.addEventListener('click', function () {
+                  var season = button.dataset.season;
+                  document.querySelectorAll('.season-toggle button').forEach(function (b) {
+                    b.classList.toggle('active', b === button);
+                    b.setAttribute('aria-pressed', b === button ? 'true' : 'false');
+                  });
+                  document.querySelectorAll('.season-photo').forEach(function (photo) {
+                    photo.hidden = photo.dataset.season !== season;
+                  });
+                });
+              });
+            </script>
+          {% else %}
+            {%
+              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+              cache_bust=true
+            %}
+          {% endif %}
         {% endif %}
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
@@ -38,14 +148,21 @@ layout: default
       </div>
     {% endif %}
 
+    {% if news_in_sidebar %}
+      </div>
+      <div class="col-12 about-main order-sm-1">
+    {% endif %}
+
     <div class="clearfix">{{ content }}</div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
+      {% if news_in_sidebar %}<div class="d-sm-none">{% endif %}
       <h2>
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
       </h2>
       {% include news.liquid limit=true %}
+      {% if news_in_sidebar %}</div>{% endif %}
     {% endif %}
 
     <!-- Latest posts -->
@@ -56,12 +173,31 @@ layout: default
       {% include latest_posts.liquid %}
     {% endif %}
 
+    {% if news_in_sidebar %}
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-12 about-main">
+    {% endif %}
+
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">publications</a>
+        <a href="{{ '/research/' | relative_url }}" style="color: inherit">research</a>
       </h2>
       {% include selected_papers.liquid %}
+    {% endif %}
+
+    {% if news_in_sidebar %}
+      </div>
+      <!-- News (right-hand column, level with the paper list; hidden on phones) -->
+      <div class="col-12 about-side d-none d-sm-flex flex-column">
+        <h2>
+          <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        </h2>
+        {% include news.liquid limit=true sidebar=true %}
+      </div>
+      </div>
     {% endif %}
 
     <!-- Social -->

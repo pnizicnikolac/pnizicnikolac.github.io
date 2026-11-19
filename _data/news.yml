@@ -1,0 +1,59 @@
+# News shown on the front page (and in full at /news/), newest first.
+# It mirrors the "Communications" section of the CV: add new items at the top.
+#   date: shown as written. Upcoming items give the full date ("11 Dec 2026");
+#         past items give month and year only ("Oct 2026"), with the exact day,
+#         where known, kept in a comment after it.
+#   text: one line, in the form "Talk at the <event>, <place>";
+#         Markdown is allowed, e.g. for a ([video](https://...)) link
+- date: 11 Dec 2026
+  text: Talk at the Seminar, NYU
+- date: 08 Dec 2026
+  text: Talk at the Theory Group Seminar, UChicago
+- date: 07 Dec 2026
+  text: Talk at the Seminar in high dimensional probability and statistics, Michigan State University
+- date: 24 Nov 2026
+  text: Talk at the Seminar, Berkeley
+- date: Oct 2026 # 29 Oct 2026
+  text: Talk at the Probability Seminar, UC Davis
+- date: Oct 2026 # 13 Oct 2026
+  text: "Talk at the Probabilistic Phenomena on Graphs, Groups, and Manifolds workshop, Simons Institute ([video](https://simons.berkeley.edu/talks/petar-nizic-nikolac-eth-zurich-2026-10-13))"
+- date: Aug 2026 # 20 Aug 2026
+  text: Talk at the Seminar, Yale
+- date: Aug 2026
+  text: Started a semester-long visit to the Simons Institute in Berkeley (Spectral Theory Beyond Graphs program)
+- date: Jul 2026 # 16 Jul 2026
+  text: Talk at the Seminar, Institute of Science and Technology Austria
+- date: Jul 2026 # 11 Jul 2026
+  text: Talk at Foundations of Computational Mathematics 2026, Vienna
+- date: Jun 2026 # 16 Jun 2026
+  text: Attending the RandNLA workshop, Lausanne
+- date: Jun 2026 # 05 Jun 2026
+  text: Talk at the SIAM Conference on Optimization, Edinburgh
+- date: Oct 2025 # 23 Oct 2025
+  text: "Talk at the 1W-MINDS Seminar, online ([video](https://www.youtube.com/watch?v=Jv8uMDS5kzA))"
+- date: Jun 2025 # 24 Jun 2025
+  text: Talk at the 57th Annual ACM Symposium on Theory of Computing, Prague
+- date: Jun 2025 # 23 Jun 2025
+  text: Started working as a Quant Research Intern at G-Research
+- date: Feb 2025
+  text: Attending the Towards a Theory for Typical-Case Algorithmic Hardness workshop, Les Houches
+- date: Nov 2024
+  text: Talk at the Seminar za teoriju vjerojatnosti, PMF Zagreb
+- date: Sep 2024
+  text: Attending the Mathematical Aspects of Learning Theory – 20 years later conference, Barcelona
+- date: May 2024
+  text: Talk at the Seminar, MIT
+- date: Mar 2024
+  text: Attending the Citadel Securities PhD Summit, London
+- date: Nov 2023
+  text: Talk at the Research Seminar Noncommutative and Functional Analysis, Saarland University
+- date: Dec 2022
+  text: Talk at the Graduate Seminar in Probability, ETH Zürich
+- date: Oct 2022
+  text: Started PhD at ETH Zurich
+- date: Jun 2022
+  text: Graduated from Trinity College, Cambridge, with a Master of Mathematics
+- date: Jun 2021
+  text: Started working as a Quant Software Engineer at Squarepoint
+- date: Oct 2020
+  text: Talk at the Summer Research Festival 2020, Cambridge
